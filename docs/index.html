@@ -641,29 +641,36 @@
         line-height: 1.6;
       }
 
+      .timeline-container {
+        padding: 0 15px;
+      }
+
       .timeline-line {
-        left: 20px;
-        /* Move line to left edge */
+        left: 15px;
+        transform: translateX(-50%);
       }
 
       .event-node {
-        left: 20px;
+        left: 0;
+        width: 16px;
+        height: 16px;
+        border-width: 3px;
       }
 
       .event-row.left,
       .event-row.right {
         justify-content: flex-end;
-        padding: 30px 0;
+        padding: 25px 0;
       }
 
       .event-card {
-        width: calc(100% - 50px);
-        padding: 20px;
+        width: calc(100% - 40px);
+        padding: 20px 15px;
       }
 
       .event-title {
-        font-size: 1.3rem;
-        margin-bottom: 10px;
+        font-size: 1.2rem;
+        margin-bottom: 8px;
       }
 
       .event-description {
@@ -673,7 +680,6 @@
       .event-row.left .event-card,
       .event-row.right .event-card {
         transform: translateX(20px);
-        /* Slide in from right for all on mobile */
       }
     }
   </style>
