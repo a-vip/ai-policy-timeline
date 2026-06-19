@@ -58,36 +58,50 @@
   {
     "id": "9",
     "year": "2023",
+    "title": "First REAIM Summit (The Hague)",
+    "description": "The inaugural Summit on Responsible Artificial Intelligence in the Military Domain (REAIM) is co-hosted by the Netherlands and the Republic of Korea, launching a global dialogue on military AI norms.",
+    "category": "Conference"
+  },
+  {
+    "id": "10",
+    "year": "2023",
     "title": "Bletchley Declaration",
     "description": "At the first global AI Safety Summit held at Bletchley Park, 28 countries including the US, UK, and China sign a declaration acknowledging the severe risks of frontier AI and committing to global cooperation.",
     "category": "International Agreement"
   },
   {
-    "id": "10",
+    "id": "11",
     "year": "2024",
     "title": "First UN General Assembly AI Resolution",
     "description": "The UN General Assembly unanimously adopts a landmark resolution promoting safe, secure, and trustworthy artificial intelligence systems, emphasizing human rights and sustainable development.",
     "category": "International Law"
   },
   {
-    "id": "11",
+    "id": "12",
     "year": "2024",
     "title": "EU AI Act Passed",
     "description": "The European Parliament officially passes the AI Act, creating the world's first comprehensive legal framework for artificial intelligence, setting a strict global standard for AI regulation and compliance.",
     "category": "Legislation"
   },
   {
-    "id": "12",
-    "year": "2025",
-    "title": "UNIDIR AI & Security Conference",
-    "description": "The United Nations Institute for Disarmament Research (UNIDIR) convenes high-level summits focusing on the intersection of AI, global security, and the immediate regulation of autonomous weapon systems.",
+    "id": "13",
+    "year": "2024",
+    "title": "Second REAIM Summit (Seoul)",
+    "description": "Hosted by the Republic of Korea, the second REAIM Summit convenes international defense and policy leaders to establish concrete normative frameworks and governance mechanisms for AI in the military domain.",
     "category": "Conference"
   },
   {
-    "id": "13",
+    "id": "14",
+    "year": "2025",
+    "title": "UNIDIR Global Conference on AI, Security and Ethics",
+    "description": "The inaugural UNIDIR #AISE25 conference in Geneva brought together the diplomatic community, military, and tech sectors to address destabilization, lifecycle management, and data practices regarding AI's application for security and defence.",
+    "category": "Conference"
+  },
+  {
+    "id": "15",
     "year": "2026",
-    "title": "UNIDIR AI Ethics Summit",
-    "description": "Continuing global momentum, UNIDIR holds advanced summits to establish binding ethical frameworks and verifiable compliance mechanisms for the military application of sovereign algorithms.",
+    "title": "UNIDIR Global Conference on AI, Security and Ethics",
+    "description": "UNIDIR's #AISE26 conference bridged technical and policy communities. Following UN General Assembly resolution 79/239 and resolution 80/58, it focused on the implementation of governance frameworks and practical measures for AI in the military domain.",
     "category": "Conference"
   }
 ]
