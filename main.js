@@ -39,11 +39,15 @@ function setupGSAPAnimations() {
   const cards = document.querySelectorAll('.event-card');
   
   // Create a master timeline linked to the scroll of .timeline-container
+  // Calculate end scroll distance based on number of cards.
+  // We want to scroll enough to pass through all cards smoothly.
+  const totalScrollHeight = cards.length * 1000; // 1000px of scrolling per card
+
   const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: '.timeline-container',
+      trigger: '.timeline-scene', // Pin the scene itself
       start: 'top top',
-      end: 'bottom bottom',
+      end: `+=${totalScrollHeight}px`, // Add scroll space dynamically
       scrub: 1, // Smooth scrubbing
       pin: true,
       pinSpacing: true
