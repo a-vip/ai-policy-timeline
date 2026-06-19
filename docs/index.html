@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Autonomous Policy Timeline | Avi Perera</title>
-    <meta name="description" content="An interactive 3D timeline visualizing the history of AI regulation from its early beginnings to modern international law, curated by Avi Perera." />
+    <meta name="description" content="An interactive timeline visualizing the history of AI regulation from its early beginnings to modern international law, curated by Avi Perera." />
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
       
@@ -13,7 +13,8 @@
         --card-bg: rgba(30, 41, 59, 0.6);
         --text-color: #f8fafc;
         --accent-glow: rgba(56, 189, 248, 0.4);
-        --line-color: #334155;
+        --accent-solid: #38bdf8;
+        --line-color: rgba(255, 255, 255, 0.1);
       }
       
       body, html {
@@ -25,17 +26,10 @@
         overflow-x: hidden;
       }
       
-      /* Base layout */
-      
-      .app-container {
-        position: relative;
-        width: 100%;
-      }
-      
       /* Hero section */
       
       .hero {
-        height: 100vh;
+        min-height: 80vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -43,7 +37,6 @@
         text-align: center;
         padding: 0 20px;
         position: relative;
-        z-index: 10;
         background: radial-gradient(circle at center, rgba(30, 41, 59, 0.8) 0%, var(--bg-color) 70%);
       }
       
@@ -79,56 +72,105 @@
         60% { transform: translateY(-10px); }
       }
       
-      /* 3D Timeline Section */
+      /* Vertical Timeline Layout */
       
-      .timeline-container {
+      .timeline-section {
         position: relative;
         width: 100%;
+        padding: 100px 0;
         background-color: var(--bg-color);
       }
       
-      .timeline-scene {
+      .timeline-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        padding: 0 20px;
+      }
+      
+      /* The center line */
+      
+      .timeline-line {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background-color: var(--line-color);
+        transform: translateX(-50%);
+        border-radius: 2px;
+      }
+      
+      /* The glowing progress line that fills up on scroll */
+      
+      .timeline-progress {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 0%;
+        background: linear-gradient(to bottom, #38bdf8, #818cf8);
+        border-radius: 2px;
+        box-shadow: 0 0 15px var(--accent-glow);
+      }
+      
+      /* Individual Event Row */
+      
+      .event-row {
         position: relative;
         width: 100%;
-        height: 100vh;
-        overflow: hidden;
-        perspective: 1000px;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: flex-end;
+        padding: 60px 0;
       }
       
-      /* The central glowing axis */
+      .event-row.left {
+        justify-content: flex-start;
+      }
       
-      .timeline-axis {
+      /* The dot on the center line */
+      
+      .event-node {
         position: absolute;
-        width: 2px;
-        height: 200vw; /* Extend deep into Z space */
-        background: linear-gradient(to bottom, transparent, var(--accent-glow), transparent);
-        box-shadow: 0 0 15px var(--accent-glow);
-        transform: rotateX(90deg) translateZ(-100px);
-        transform-origin: center;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 20px;
+        height: 20px;
+        background-color: var(--bg-color);
+        border: 4px solid #334155;
+        border-radius: 50%;
+        z-index: 2;
+        transition: border-color 0.4s ease, box-shadow 0.4s ease;
       }
       
-      /* Event Cards */
+      .event-node.active {
+        border-color: var(--accent-solid);
+        box-shadow: 0 0 15px var(--accent-glow);
+      }
+      
+      /* Event Card */
       
       .event-card {
-        position: absolute;
-        width: 400px;
-        padding: 30px;
+        width: 45%; /* Takes up just under half the screen */
         background: var(--card-bg);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 16px;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
-        transform-style: preserve-3d;
-        opacity: 0; /* Hidden initially, controlled by GSAP */
-        /* Center in the viewport */
-        left: 50%;
-        top: 50%;
-        margin-left: -200px; /* half of width */
-        margin-top: -150px; /* approx half of height */
+        padding: 30px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05);
+        opacity: 0; /* Hidden initially for GSAP */
+      }
+      
+      /* Layout shifts for right/left cards */
+      
+      .event-row.left .event-card {
+        transform: translateX(-50px);
+      }
+      
+      .event-row.right .event-card {
+        transform: translateX(50px);
       }
       
       /* Year Badge */
@@ -136,7 +178,7 @@
       .event-year {
         display: inline-block;
         padding: 6px 12px;
-        background: rgba(56, 189, 248, 0.2);
+        background: rgba(56, 189, 248, 0.15);
         color: #38bdf8;
         border-radius: 20px;
         font-weight: 800;
@@ -155,7 +197,7 @@
       }
       
       .event-title {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         font-weight: 600;
         margin: 0 0 15px 0;
         line-height: 1.3;
@@ -187,15 +229,34 @@
         text-decoration: none;
       }
       
+      /* Mobile Layout */
+      
       @media (max-width: 768px) {
         .hero h1 { font-size: 2.5rem; }
-        .event-card { 
-          width: 300px; 
-          margin-left: -150px;
+        
+        .timeline-line {
+          left: 30px; /* Move line to left edge */
+        }
+        
+        .event-node {
+          left: 30px;
+        }
+
+        .event-row.left, .event-row.right {
+          justify-content: flex-end;
+          padding: 30px 0;
+        }
+        
+        .event-card {
+          width: calc(100% - 70px); /* Fill space minus the line gap */
+        }
+        
+        .event-row.left .event-card, .event-row.right .event-card {
+          transform: translateX(20px); /* Slide in from right for all on mobile */
         }
       }
     </style>
-    <script type="module" crossorigin src="/ai-policy-timeline/assets/index-B1p5TCSg.js"></script>
+    <script type="module" crossorigin src="/ai-policy-timeline/assets/index-DgxZKXWc.js"></script>
   </head>
   <body>
     <div class="app-container">
@@ -206,12 +267,15 @@
         <div class="scroll-indicator">Scroll to Explore</div>
       </section>
 
-      <section class="timeline-container">
-        <div class="timeline-scene">
-          <div class="timeline-axis"></div>
-          <div id="events-wrapper">
-            <!-- Cards will be injected here by JS -->
+      <section class="timeline-section">
+        <div class="timeline-container">
+          <!-- Center vertical line -->
+          <div class="timeline-line">
+            <div class="timeline-progress" id="timeline-progress"></div>
           </div>
+          
+          <!-- Rows will be injected here -->
+          <div id="events-wrapper"></div>
         </div>
       </section>
       
