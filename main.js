@@ -45,6 +45,8 @@ function setupGSAPAnimations() {
       start: 'top top',
       end: 'bottom bottom',
       scrub: 1, // Smooth scrubbing
+      pin: true,
+      pinSpacing: true
     }
   });
 
