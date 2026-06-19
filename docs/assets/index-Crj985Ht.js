@@ -4,7 +4,7 @@
           <div class="event-category">${e.category}</div>
           <div class="event-header">
             <div class="event-year">${e.year}</div>
-            ${e.flag?`<div class="event-flag">${e.flag}</div>`:``}
+            ${e.flag?`<div class="event-flag"><span class="fi fi-${e.flag}"></span></div>`:``}
           </div>
           <h2 class="event-title">${e.title}</h2>
           <p class="event-description">${e.description}</p>
