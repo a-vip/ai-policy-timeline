@@ -39,10 +39,18 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 0 20px;
+      padding: 100px 20px 60px; /* Avoid top nav overlap */
       position: relative;
-      background: radial-gradient(ellipse at top, rgba(30, 41, 59, 0.8) 0%, var(--bg-color) 80%);
+      background: var(--bg-color); /* Gradient moved to orbs */
       overflow: hidden;
+    }
+
+    .hero-bottom-fade {
+      position: absolute;
+      bottom: 0; left: 0; right: 0; height: 150px;
+      background: linear-gradient(to bottom, transparent, var(--bg-color));
+      z-index: 1;
+      pointer-events: none;
     }
 
     /* Animated background orbs for hero */
@@ -616,17 +624,30 @@
     /* Mobile Layout */
 
     @media (max-width: 768px) {
+      .hero {
+        padding-top: 120px;
+        min-height: 70vh;
+      }
+
       .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
+        padding: 5px;
+        margin-bottom: 15px;
+      }
+
+      .hero p {
+        font-size: 0.95rem;
+        padding: 20px;
+        line-height: 1.6;
       }
 
       .timeline-line {
-        left: 30px;
+        left: 20px;
         /* Move line to left edge */
       }
 
       .event-node {
-        left: 30px;
+        left: 20px;
       }
 
       .event-row.left,
@@ -636,8 +657,17 @@
       }
 
       .event-card {
-        width: calc(100% - 70px);
-        /* Fill space minus the line gap */
+        width: calc(100% - 50px);
+        padding: 20px;
+      }
+
+      .event-title {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+      }
+
+      .event-description {
+        font-size: 0.95rem;
       }
 
       .event-row.left .event-card,
@@ -678,6 +708,7 @@
         <h1 class="glow-hover" style="border-radius: 12px;">AI Policy Timeline</h1>
         <p class="glow-hover">Welcome to the most comprehensive interactive chronology of artificial intelligence policy on the internet. This timeline tracks the monumental shifts in global AI governance, from the earliest theoretical safety frameworks in the 1940s to the sweeping regulations of the EU AI Act and modern international defence policies. Scroll down to explore the critical milestones shaping the future of autonomous systems and global tech security.</p>
       </div>
+      <div class="hero-bottom-fade"></div>
       <div class="scroll-indicator">Scroll to Explore</div>
     </section>
 
