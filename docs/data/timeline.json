@@ -1,0 +1,72 @@
+[
+  {
+    "id": "1",
+    "year": "1942",
+    "title": "Asimov's Three Laws of Robotics",
+    "description": "Science fiction author Isaac Asimov introduces the Three Laws of Robotics in his short story 'Runaround', forming the earliest theoretical foundation for AI safety and regulation.",
+    "category": "Theory"
+  },
+  {
+    "id": "2",
+    "year": "2014",
+    "title": "First UN CCW Meeting on LAWS",
+    "description": "The United Nations Convention on Certain Conventional Weapons (CCW) holds its first informal meeting of experts to discuss questions related to Lethal Autonomous Weapons Systems (LAWS).",
+    "category": "International Law"
+  },
+  {
+    "id": "3",
+    "year": "2017",
+    "title": "Asilomar AI Principles",
+    "description": "Created by the Future of Life Institute, a set of 23 principles designed to ensure that AI remains beneficial to humanity, endorsed by thousands of AI researchers.",
+    "category": "Principles"
+  },
+  {
+    "id": "4",
+    "year": "2018",
+    "title": "GDPR Goes Into Effect",
+    "description": "The General Data Protection Regulation (GDPR) becomes enforceable in the EU. Article 22 specifically regulates automated decision-making and profiling, granting users the 'right to an explanation'.",
+    "category": "Legislation"
+  },
+  {
+    "id": "5",
+    "year": "2019",
+    "title": "OECD AI Principles",
+    "description": "The OECD adopts its Principles on Artificial Intelligence, the first intergovernmental standard on AI, promoting innovative and trustworthy AI that respects human rights and democratic values.",
+    "category": "Principles"
+  },
+  {
+    "id": "6",
+    "year": "2021",
+    "title": "EU AI Act Proposed",
+    "description": "The European Commission proposes the Artificial Intelligence Act, introducing a risk-based approach to AI regulation, banning 'unacceptable risk' applications like social scoring.",
+    "category": "Legislation"
+  },
+  {
+    "id": "7",
+    "year": "2022",
+    "title": "Blueprint for an AI Bill of Rights",
+    "description": "The US White House Office of Science and Technology Policy releases a non-binding blueprint outlining five core principles to guide the design, use, and deployment of automated systems.",
+    "category": "Guidelines"
+  },
+  {
+    "id": "8",
+    "year": "2023",
+    "title": "Bletchley Declaration",
+    "description": "At the first global AI Safety Summit held at Bletchley Park, 28 countries including the US, UK, and China sign a declaration acknowledging the risks of frontier AI and committing to global cooperation.",
+    "category": "International Agreement"
+  },
+  {
+    "id": "9",
+    "year": "2024",
+    "title": "EU AI Act Passed",
+    "description": "The European Parliament officially passes the AI Act, creating the world's first comprehensive legal framework for artificial intelligence, setting a global standard for AI regulation.",
+    "category": "Legislation"
+  },
+  {
+    "id": "10",
+    "year": "2024",
+    "title": "First UN General Assembly AI Resolution",
+    "description": "The UN General Assembly unanimously adopts a resolution promoting safe, secure, and trustworthy artificial intelligence systems, emphasizing human rights and sustainable development.",
+    "category": "International Law"
+  }
+]
