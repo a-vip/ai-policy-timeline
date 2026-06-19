@@ -22,7 +22,10 @@ async function initTimeline() {
         <div class="event-node"></div>
         <div class="event-card">
           <div class="event-category">${event.category}</div>
-          <div class="event-year">${event.year}</div>
+          <div class="event-header">
+            <div class="event-year">${event.year}</div>
+            ${event.flag ? `<div class="event-flag">${event.flag}</div>` : ''}
+          </div>
           <h2 class="event-title">${event.title}</h2>
           <p class="event-description">${event.description}</p>
         </div>
