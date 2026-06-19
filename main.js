@@ -3,7 +3,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 async function initTimeline() {
   try {
-    const response = await fetch('./data/timeline.json');
+    // Add a cache-busting timestamp so the browser always fetches the latest data
+    const response = await fetch(`./data/timeline.json?v=${new Date().getTime()}`);
     if (!response.ok) throw new Error('Failed to fetch timeline data');
     const events = await response.json();
     
