@@ -107,7 +107,7 @@
     "id": "14",
     "year": "2017",
     "title": "Pan-Canadian AI Strategy",
-    "description": "Canada becomes the first country in the world to launch a national AI strategy, investing heavily in establishing sovereign AI infrastructure, talent retention, and deep learning research.",
+    "description": "Canada becomes the first country in the world to launch a national AI strategy, investing heavily in establishing AI infrastructure, talent retention, and deep learning research.",
     "category": "National Strategy",
     "flag": "ca"
   },
@@ -115,7 +115,7 @@
     "id": "15",
     "year": "2017",
     "title": "New Generation AI Development Plan",
-    "description": "China releases its comprehensive national strategy to become the world's primary AI innovation center by 2030, sparking a global focus on national AI competitiveness and sovereign tech infrastructure.",
+    "description": "China releases its comprehensive national strategy to become the world's primary AI innovation center by 2030, sparking a global focus on national AI competitiveness and tech infrastructure.",
     "category": "National Strategy",
     "flag": "cn"
   },
@@ -177,6 +177,14 @@
   },
   {
     "id": "23",
+    "year": "Jun 2020",
+    "title": "Global Partnership on AI (GPAI)",
+    "description": "The Global Partnership on AI is launched as an international and multistakeholder initiative to guide the responsible development and use of AI based on human rights and democratic values.",
+    "category": "International Agreement",
+    "flag": "un"
+  },
+  {
+    "id": "24",
     "year": "2021",
     "title": "South Korea National AI Strategy",
     "description": "Building on the Presidential Commission on the Fourth Industrial Revolution, South Korea officially enacts its National Artificial Intelligence Strategy (2021-2025) to govern domestic AI deployment.",
@@ -184,7 +192,7 @@
     "flag": "kr"
   },
   {
-    "id": "24",
+    "id": "25",
     "year": "2021",
     "title": "Brazilian AI Strategy (EBIA)",
     "description": "The Brazilian Artificial Intelligence Strategy (EBIA) is released, aiming to guide public policies, foster innovation, and address ethical concerns related to AI development in South America.",
@@ -192,7 +200,7 @@
     "flag": "br"
   },
   {
-    "id": "25",
+    "id": "26",
     "year": "2021",
     "title": "EU AI Act Proposed",
     "description": "The European Commission proposes the Artificial Intelligence Act, introducing a strict risk-based approach to AI regulation and banning 'unacceptable risk' applications like social scoring.",
@@ -200,7 +208,15 @@
     "flag": "eu"
   },
   {
-    "id": "26",
+    "id": "27",
+    "year": "Mar 2022",
+    "title": "China Algorithm Provisions",
+    "description": "The Administrative Provisions on Algorithm Recommendation for Internet Information Services take effect, establishing a foundational algorithm registry system targeting how information is pushed to users.",
+    "category": "Regulation",
+    "flag": "cn"
+  },
+  {
+    "id": "28",
     "year": "2022",
     "title": "EU AI Liability Directive Proposed",
     "description": "The European Commission proposes the AI Liability Directive, designed to establish rules on non-contractual civil liability for damage caused by AI, complementing the broader AI Act.",
@@ -208,7 +224,7 @@
     "flag": "eu"
   },
   {
-    "id": "27",
+    "id": "29",
     "year": "2022",
     "title": "Blueprint for an AI Bill of Rights",
     "description": "The US White House Office of Science and Technology Policy releases a non-binding blueprint outlining five core principles to guide the design, use, and deployment of automated systems.",
@@ -216,7 +232,15 @@
     "flag": "us"
   },
   {
-    "id": "28",
+    "id": "30",
+    "year": "Jan 2023",
+    "title": "China Deep Synthesis Provisions",
+    "description": "China enacts rules governing deepfakes, text-to-speech, and AI-synthesized content, requiring content labeling to prevent deception and ensuring adherence to state security guidelines.",
+    "category": "Regulation",
+    "flag": "cn"
+  },
+  {
+    "id": "31",
     "year": "Apr 2023",
     "title": "Rwanda National AI Policy",
     "description": "Rwanda approves its National AI Policy, aiming to leverage AI for economic growth, digital inclusion, and to firmly position the country as a leading regional AI innovator in Africa.",
@@ -224,7 +248,31 @@
     "flag": "rw"
   },
   {
-    "id": "29",
+    "id": "32",
+    "year": "May 2023",
+    "title": "Hiroshima AI Process (HAIP)",
+    "description": "Launched by G7 leaders at the Hiroshima Summit to promote safe, secure, and trustworthy AI. It establishes an international, voluntary code of conduct for organizations developing advanced systems.",
+    "category": "International Agreement",
+    "flag": "un"
+  },
+  {
+    "id": "33",
+    "year": "Aug 2023",
+    "title": "China Generative AI Measures",
+    "description": "The Interim Measures for Generative AI take effect, marking China's first binding regulation on public generative AI. Providers must file algorithms, conduct security assessments, and uphold state values.",
+    "category": "Regulation",
+    "flag": "cn"
+  },
+  {
+    "id": "34",
+    "year": "Oct 2023",
+    "title": "US Executive Order 14110",
+    "description": "President Biden signs a sweeping, landmark Executive Order on Safe, Secure, and Trustworthy AI, using the Defense Production Act to require safety reporting from foundational model developers.",
+    "category": "National Strategy",
+    "flag": "us"
+  },
+  {
+    "id": "35",
     "year": "2023",
     "title": "First REAIM Summit (The Hague)",
     "description": "The inaugural Summit on Responsible Artificial Intelligence in the Military Domain (REAIM) is co-hosted by the Netherlands and the Republic of Korea, launching a global dialogue on military AI norms.",
@@ -232,15 +280,15 @@
     "flag": "nl"
   },
   {
-    "id": "30",
-    "year": "2023",
+    "id": "36",
+    "year": "Nov 2023",
     "title": "Bletchley Declaration",
-    "description": "At the first global AI Safety Summit held at Bletchley Park, 28 countries including the US, UK, and China sign a declaration acknowledging the severe risks of frontier AI and committing to global cooperation.",
+    "description": "At the first global AI Safety Summit held at Bletchley Park, 28 countries including the US, EU, and China sign a declaration acknowledging severe frontier AI risks and committing to global cooperation.",
     "category": "International Agreement",
     "flag": "gb"
   },
   {
-    "id": "31",
+    "id": "37",
     "year": "Mar 2024",
     "title": "IndiaAI Mission Launched",
     "description": "The Indian government launches the 'IndiaAI Mission' to provide advanced infrastructure, compute access, and significant support for homegrown startups and researchers.",
@@ -248,7 +296,7 @@
     "flag": "in"
   },
   {
-    "id": "32",
+    "id": "38",
     "year": "Mar 2024",
     "title": "First UN General Assembly AI Resolution",
     "description": "The UN General Assembly unanimously adopts a landmark resolution promoting safe, secure, and trustworthy artificial intelligence systems, emphasizing human rights and sustainable development.",
@@ -256,7 +304,7 @@
     "flag": "un"
   },
   {
-    "id": "33",
+    "id": "39",
     "year": "Aug 2024",
     "title": "EU AI Act Enters Into Force",
     "description": "The EU AI Act officially enters into force, establishing the world's first comprehensive legal framework for AI and triggering the countdown for the phased enforcement of specific regulations.",
@@ -264,7 +312,7 @@
     "flag": "eu"
   },
   {
-    "id": "34",
+    "id": "40",
     "year": "Sep 2024",
     "title": "Second REAIM Summit (Seoul)",
     "description": "Hosted by the Republic of Korea, the second REAIM Summit convenes international defense and policy leaders to establish concrete normative frameworks and governance mechanisms for AI in the military domain.",
@@ -272,7 +320,7 @@
     "flag": "kr"
   },
   {
-    "id": "35",
+    "id": "41",
     "year": "Dec 2024",
     "title": "Brazil Senate Approves AI Bill",
     "description": "The Brazilian Senate approves Bill no. 2338/2023, setting rules for the ethical development and use of AI in Brazil, moving the country closer to comprehensive national AI regulation.",
@@ -280,7 +328,7 @@
     "flag": "br"
   },
   {
-    "id": "36",
+    "id": "42",
     "year": "Feb 2025",
     "title": "EU AI Act: Prohibitions Take Effect",
     "description": "Prohibitions on 'unacceptable risk' AI systems defined by the EU AI Act—such as real-time biometric categorization, workplace emotion inference, and social scoring—become legally enforceable.",
@@ -288,7 +336,7 @@
     "flag": "eu"
   },
   {
-    "id": "37",
+    "id": "43",
     "year": "Mar 2025",
     "title": "UNIDIR AI, Security and Ethics (#AISE25)",
     "description": "The inaugural UNIDIR conference in Geneva convenes to address destabilization, lifecycle management, and data practices regarding AI's application for security and defence.",
@@ -296,7 +344,7 @@
     "flag": "un"
   },
   {
-    "id": "38",
+    "id": "44",
     "year": "Aug 2025",
     "title": "EU AI Act: GPAI Obligations Apply",
     "description": "Obligations for General-Purpose AI (GPAI) models become applicable. Providers of foundation models must adhere to transparency requirements, copyright laws, and risk governance frameworks.",
@@ -304,7 +352,7 @@
     "flag": "eu"
   },
   {
-    "id": "39",
+    "id": "45",
     "year": "Jun 2026",
     "title": "Rwanda National AI Agency",
     "description": "Rwanda officially approves the establishment of a National AI Agency, becoming the first African country with a dedicated, standalone national institution to scale its AI policy framework.",
@@ -312,7 +360,7 @@
     "flag": "rw"
   },
   {
-    "id": "40",
+    "id": "46",
     "year": "Jun 2026",
     "title": "UNIDIR AI, Security and Ethics (#AISE26)",
     "description": "Following UN General Assembly resolutions 79/239 and 80/58, UNIDIR bridges technical and policy communities to implement governance frameworks and practical measures for military AI.",
@@ -320,7 +368,7 @@
     "flag": "un"
   },
   {
-    "id": "41",
+    "id": "47",
     "year": "Aug 2026",
     "title": "EU AI Act: General Application Date",
     "description": "The general application date for the majority of the EU AI Act. Requirements for high-risk AI systems become enforceable, alongside transparency rules for deepfakes and generative content.",
@@ -328,7 +376,7 @@
     "flag": "eu"
   },
   {
-    "id": "42",
+    "id": "48",
     "year": "Dec 2027",
     "title": "EU Digital Omnibus Regulation",
     "description": "Under the EU Digital Omnibus, strict rules and conformity assessments for certain high-risk areas, including complex biometrics and border control, go into full application.",
@@ -336,7 +384,7 @@
     "flag": "eu"
   },
   {
-    "id": "43",
+    "id": "49",
     "year": "Aug 2028",
     "title": "EU AI Act: Embedded System Compliance",
     "description": "The final major phase of the EU AI Act roll-out. High-risk AI systems embedded into regulated physical products, such as medical devices, lifts, and toys, are required to be fully compliant.",
