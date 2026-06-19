@@ -112,24 +112,160 @@
         font-weight: 600;
         text-decoration: none;
         transition: all 0.3s ease;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
       }
-      .nav-btn-outline {
-        color: #cbd5e1;
-        border: 1px solid rgba(255,255,255,0.1);
-        background: rgba(255,255,255,0.02);
+      .nav-btn-support {
+        color: #f472b6;
+        border: 1px solid #f472b6;
+        background: transparent;
       }
-      .nav-btn-outline:hover {
-        background: rgba(255,255,255,0.1);
-        color: #fff;
+      .nav-btn-support:hover {
+        background: rgba(244, 114, 182, 0.1);
+        box-shadow: 0 0 10px rgba(244, 114, 182, 0.4);
       }
-      .nav-btn-solid {
-        background: linear-gradient(to right, #38bdf8, #818cf8);
-        color: #0b0f19;
+      .nav-btn-support svg {
+        fill: #f472b6;
+      }
+
+      /* Support Hub Modal */
+      .modal-overlay {
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+      .modal-overlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .modal-content {
+        background: #0f111a;
+        border: 1px solid rgba(244, 114, 182, 0.3);
+        border-radius: 12px;
+        width: 90%;
+        max-width: 400px;
+        padding: 25px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(244, 114, 182, 0.1);
+        transform: translateY(20px);
+        transition: transform 0.3s ease;
+        position: relative;
+      }
+      .modal-overlay.open .modal-content {
+        transform: translateY(0);
+      }
+      .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding-bottom: 15px;
+      }
+      .modal-title {
+        color: #f472b6;
+        font-family: monospace;
+        font-size: 1.1rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin: 0;
+      }
+      .modal-close {
+        color: #f472b6;
+        cursor: pointer;
+        background: none;
         border: none;
+        font-size: 1.5rem;
+        padding: 0;
+        line-height: 1;
       }
-      .nav-btn-solid:hover {
-        opacity: 0.9;
-        box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+      .modal-section {
+        margin-bottom: 25px;
+      }
+      .modal-label {
+        color: rgba(255,255,255,0.5);
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-transform: uppercase;
+      }
+      .modal-action-btn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 12px;
+        background: #151b2b;
+        border: 1px solid #1e293b;
+        border-radius: 8px;
+        color: #38bdf8;
+        font-weight: 600;
+        font-family: monospace;
+        font-size: 0.9rem;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .modal-action-btn:hover {
+        background: #1e293b;
+        border-color: #38bdf8;
+      }
+      .modal-action-btn.share {
+        color: #c084fc;
+        border-color: rgba(192, 132, 252, 0.3);
+      }
+      .modal-action-btn.share:hover {
+        border-color: #c084fc;
+      }
+      .support-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .support-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        padding: 12px;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: all 0.2s;
+      }
+      .support-btn.patreon {
+        background: rgba(249, 104, 84, 0.1);
+        color: #f96854;
+        border: 1px solid rgba(249, 104, 84, 0.3);
+      }
+      .support-btn.patreon:hover {
+        background: rgba(249, 104, 84, 0.2);
+        border-color: #f96854;
+      }
+      .support-btn.coffee {
+        background: rgba(255, 221, 0, 0.1);
+        color: #ffdd00;
+        border: 1px solid rgba(255, 221, 0, 0.3);
+      }
+      .support-btn.coffee:hover {
+        background: rgba(255, 221, 0, 0.2);
+        border-color: #ffdd00;
       }
 
       /* Vertical Timeline Layout */
@@ -358,7 +494,10 @@
           Avi Perera
         </a>
         <div class="nav-links">
-          <a href="https://aviperera.com/contact/" class="nav-btn nav-btn-outline">Support / Connect</a>
+          <button id="open-support-btn" class="nav-btn nav-btn-support">
+            <svg width="14" height="14" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            SUPPORT
+          </button>
         </div>
       </nav>
 
@@ -384,6 +523,55 @@
         <p>Curated by <a href="https://aviperera.com" target="_blank">Avi Perera</a> &copy; 2026. Built for transparency in Sovereign Algorithms and Autonomous Weapons Policy.</p>
       </section>
 
+    </div>
+    
+    <!-- Support Hub Modal -->
+    <div id="support-modal" class="modal-overlay">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">POLICY TIMELINE HUB</h3>
+          <button id="close-support-btn" class="modal-close">&times;</button>
+        </div>
+        
+        <div class="modal-section">
+          <div class="modal-label">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            CREATOR
+          </div>
+          <a href="https://aviperera.com" target="_blank" class="modal-action-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            BY AVI — AVIPERERA.COM ↗
+          </a>
+        </div>
+
+        <div class="modal-section">
+          <div class="modal-label">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/><line x1="14" y1="21" x2="3" y2="21"/><line x1="3" y1="21" x2="3" y2="10"/><line x1="3" y1="10" x2="9" y2="10"/><line x1="14" y1="21" x2="14" y2="15"/><line x1="21" y1="21" x2="21" y2="15"/></svg>
+            SHARE
+          </div>
+          <button id="copy-link-btn" class="modal-action-btn share">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            COPY AVIPERERA.COM/AI-POLICY-TIMELINE
+          </button>
+        </div>
+
+        <div class="modal-section" style="margin-bottom: 0;">
+          <div class="modal-label">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            SUPPORT THE WORK
+          </div>
+          <div class="support-grid">
+            <a href="https://www.patreon.com/cw/aviperera" target="_blank" class="support-btn patreon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.957 7.21c-.004-3.064-2.391-5.576-5.191-6.482-3.478-1.125-8.064-.962-11.384.604C2.357 3.231 1.093 7.391 1.046 11.54c-.039 3.411.302 12.396 5.369 12.46 3.765.047 4.326-4.804 6.068-7.141 1.24-1.662 2.836-2.132 4.801-2.618 3.376-.836 5.678-3.501 5.673-7.031z"/></svg>
+              Patreon
+            </a>
+            <a href="https://buymeacoffee.com/avip" target="_blank" class="support-btn coffee">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.216 1.848a.5.5 0 0 0-.313-.231c-3.14-.85-9.176-.85-12.315 0a.5.5 0 0 0-.313.231A19.262 19.262 0 0 0 5 9.423c0 4.093 1.94 8.796 5.158 11.301a.5.5 0 0 0 .616 0C14.137 18.063 16 13.524 16 9.423a19.26 19.26 0 0 0-2.272-7.575zm-6.216 17.5a9.351 9.351 0 0 1-3-6.925V4.604c1.867-.348 4.133-.348 6 0v7.819a9.351 9.351 0 0 1-3 6.925zM20 9.423c0-1.666-.35-3.267-1-4.733v8.665c.65-1.466 1-3.067 1-4.733z"/></svg>
+              Coffee
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
     
     <!-- GSAP Libraries -->

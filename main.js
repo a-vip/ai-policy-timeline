@@ -96,4 +96,45 @@ function setupGSAPAnimations() {
 }
 
 // Start app
-document.addEventListener('DOMContentLoaded', initTimeline);
+document.addEventListener('DOMContentLoaded', () => {
+  initTimeline();
+  setupModal();
+});
+
+function setupModal() {
+  const modal = document.getElementById('support-modal');
+  const openBtn = document.getElementById('open-support-btn');
+  const closeBtn = document.getElementById('close-support-btn');
+  const copyBtn = document.getElementById('copy-link-btn');
+
+  openBtn.addEventListener('click', () => {
+    modal.classList.add('open');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.classList.remove('open');
+  });
+
+  // Close when clicking outside modal content
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('open');
+    }
+  });
+
+  // Copy link functionality
+  copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText('https://aviperera.com/ai-policy-timeline').then(() => {
+      const originalText = copyBtn.innerHTML;
+      copyBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> LINK COPIED!';
+      copyBtn.style.color = '#4ade80';
+      copyBtn.style.borderColor = 'rgba(74, 222, 128, 0.3)';
+      
+      setTimeout(() => {
+        copyBtn.innerHTML = originalText;
+        copyBtn.style.color = '';
+        copyBtn.style.borderColor = '';
+      }, 2000);
+    });
+  });
+}
