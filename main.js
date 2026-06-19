@@ -59,7 +59,7 @@ function setupGSAPAnimations() {
     // The ScrollTrigger for this specific row
     ScrollTrigger.create({
       trigger: row,
-      start: 'top 80%', // Triggers when the top of the row hits 80% down the viewport
+      start: 'top 50%', // Triggers precisely when the neon progress bar hits the node
       onEnter: () => {
         // Animate the card sliding in and fading up
         gsap.to(card, {
