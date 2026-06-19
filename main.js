@@ -99,7 +99,23 @@ function setupGSAPAnimations() {
 document.addEventListener('DOMContentLoaded', () => {
   initTimeline();
   setupModal();
+  setupGlowHover();
 });
+
+function setupGlowHover() {
+  const cards = document.querySelectorAll('.glow-hover');
+  
+  cards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
+}
 
 function setupModal() {
   const modal = document.getElementById('support-modal');

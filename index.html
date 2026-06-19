@@ -40,7 +40,7 @@
       text-align: center;
       padding: 0 20px;
       position: relative;
-      background: radial-gradient(circle at center, rgba(30, 41, 59, 0.8) 0%, var(--bg-color) 70%);
+      background: radial-gradient(ellipse at top, rgba(30, 41, 59, 0.8) 0%, var(--bg-color) 80%);
       overflow: hidden;
     }
 
@@ -79,13 +79,14 @@
     }
 
     .hero h1 {
-      font-size: 4rem;
+      font-size: 4.5rem;
       font-weight: 800;
       margin-bottom: 25px;
       background: linear-gradient(to right, #38bdf8, #818cf8, #c084fc);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: fadeInUp 1s ease-out forwards;
+      padding: 10px; /* Room for glow */
     }
 
     .hero p {
@@ -102,6 +103,35 @@
       animation: fadeInUp 1s ease-out 0.2s forwards;
       opacity: 0;
       transform: translateY(20px);
+    }
+
+    /* Glow tracking on hover */
+    .glow-hover {
+      position: relative;
+    }
+
+    .glow-hover::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border-radius: inherit;
+      padding: 2px; /* Border thickness */
+      background: radial-gradient(
+        400px circle at var(--mouse-x, 0) var(--mouse-y, 0),
+        rgba(56, 189, 248, 0.8),
+        transparent 40%
+      );
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .glow-hover:hover::before {
+      opacity: 1;
     }
 
     @keyframes fadeInUp {
@@ -625,12 +655,8 @@
 
     <section class="hero">
       <div class="hero-content">
-        <h1>Autonomous Policy Timeline</h1>
-        <p>The Evolution of Global AI Regulation. Welcome to the most comprehensive interactive chronology of artificial
-          intelligence policy. This timeline tracks the monumental shifts in global AI governance—from the earliest
-          theoretical safety frameworks in the 1940s to the sweeping regulations of the EU AI Act and modern international
-          defence policies. Scroll down to explore the critical milestones shaping the future of autonomous systems and
-          global tech security.</p>
+        <h1 class="glow-hover" style="border-radius: 12px;">AI Policy Timeline</h1>
+        <p class="glow-hover">Welcome to the most comprehensive interactive chronology of artificial intelligence policy on the internet. This timeline tracks the monumental shifts in global AI governance, from the earliest theoretical safety frameworks in the 1940s to the sweeping regulations of the EU AI Act and modern international defence policies. Scroll down to explore the critical milestones shaping the future of autonomous systems and global tech security.</p>
       </div>
       <div class="scroll-indicator">Scroll to Explore</div>
     </section>
