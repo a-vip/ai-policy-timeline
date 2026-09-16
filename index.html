@@ -586,6 +586,264 @@
       margin: 0;
     }
 
+    /* ── Sources & References ── */
+    .sources-section {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    }
+
+    .sources-label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: rgba(148, 163, 184, 0.7);
+      margin-bottom: 12px;
+    }
+
+    .sources-label svg {
+      opacity: 0.6;
+    }
+
+    /* Link pills */
+    .sources-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .source-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      border-radius: 20px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .source-link:hover {
+      background: rgba(56, 189, 248, 0.18);
+      border-color: rgba(56, 189, 248, 0.5);
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
+      transform: translateY(-1px);
+    }
+
+    .source-link svg {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+    }
+
+    /* Media thumbnails row */
+    .sources-media {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* Image thumbnail */
+    .source-image-thumb {
+      position: relative;
+      width: 72px;
+      height: 72px;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .source-image-thumb:hover {
+      border-color: rgba(56, 189, 248, 0.5);
+      box-shadow: 0 0 16px rgba(56, 189, 248, 0.25);
+      transform: scale(1.08);
+    }
+
+    .source-image-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .source-image-thumb .thumb-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .source-image-thumb:hover .thumb-overlay {
+      opacity: 1;
+    }
+
+    .thumb-overlay svg {
+      color: white;
+      filter: drop-shadow(0 1px 3px rgba(0,0,0,0.5));
+    }
+
+    /* Video thumbnail */
+    .source-video-thumb {
+      position: relative;
+      width: 140px;
+      height: 80px;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+      background: #000;
+    }
+
+    .source-video-thumb:hover {
+      border-color: rgba(239, 68, 68, 0.5);
+      box-shadow: 0 0 16px rgba(239, 68, 68, 0.2);
+      transform: scale(1.05);
+    }
+
+    .source-video-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0.85;
+      transition: opacity 0.3s;
+    }
+
+    .source-video-thumb:hover img {
+      opacity: 1;
+    }
+
+    .source-video-thumb .video-play-btn {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.1));
+    }
+
+    .video-play-btn svg {
+      width: 32px;
+      height: 32px;
+      color: white;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
+      transition: transform 0.25s;
+    }
+
+    .source-video-thumb:hover .video-play-btn svg {
+      transform: scale(1.15);
+    }
+
+    .source-video-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 4px 8px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.85));
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.85);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* ── Lightbox ── */
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .lightbox-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: white;
+      font-size: 1.5rem;
+      transition: all 0.25s;
+      z-index: 3001;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(255,255,255,0.2);
+      transform: scale(1.1);
+    }
+
+    .lightbox-body {
+      max-width: 90vw;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .lightbox-body img {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 12px;
+      object-fit: contain;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
+
+    .lightbox-body iframe {
+      width: min(90vw, 900px);
+      height: min(50.625vw, 506px);
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
+
+    .lightbox-caption {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.85rem;
+      text-align: center;
+      max-width: 600px;
+    }
+
     /* Footer */
     .footer {
       padding: 60px 20px;
@@ -663,6 +921,27 @@
       .event-row.right .event-card {
         transform: translateX(20px);
       }
+
+      /* Sources responsive */
+      .source-link {
+        font-size: 0.72rem;
+        padding: 5px 10px;
+      }
+
+      .source-image-thumb {
+        width: 56px;
+        height: 56px;
+      }
+
+      .source-video-thumb {
+        width: 120px;
+        height: 68px;
+      }
+
+      .lightbox-body iframe {
+        width: 92vw;
+        height: 52vw;
+      }
     }
   </style>
 </head>
@@ -672,12 +951,19 @@
 
     <!-- App Navigation -->
     <nav class="app-nav">
-      <a href="https://aviperera.com" class="nav-logo" target="_top">
+      <a href="https://aviperera.com" class="nav-logo" target="_top" style="margin-right: 15px;">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
           stroke-linecap="round" stroke-linejoin="round">
           <path d="M19 12H5M12 19l-7-7 7-7" />
         </svg>
         Return to Main Site
+      </a>
+      <a href="https://aviperera.com/ai-policy-tracker/" class="nav-logo" target="_top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        Global AI Policy Tracker
       </a>
       <div class="nav-links">
         <button id="open-support-btn" class="nav-btn nav-btn-support">
@@ -792,6 +1078,12 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Lightbox Overlay -->
+  <div id="lightbox" class="lightbox-overlay">
+    <button class="lightbox-close" id="lightbox-close">&times;</button>
+    <div class="lightbox-body" id="lightbox-body"></div>
   </div>
 
   <!-- GSAP Libraries -->
